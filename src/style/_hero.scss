@@ -1,0 +1,25 @@
+#hero{
+ 
+    display: flex;
+    flex-wrap: wrap;
+    .box{
+        flex: 1;
+        margin: 10px;
+        min-height: 100vh;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        &:nth-child(2){
+            background-attachment: fixed;
+            background-size: contain;
+            background-position: center;
+            @media screen and(max-width : 640px) {
+                background-size: cover;
+                background-position: top;
+            }
+            // background-size: cover;
+            
+        }
+    }
+    
+}

@@ -1,0 +1,113 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import './style/header';
+@import './style/hero';
+@import './style/info';
+
+#scroll-indicator{
+    z-index: 90000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 0;
+    background: orange;
+}
+.nav-link{
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: white 1px solid;
+    transition: all ease-in-out .3s;
+    &:hover{
+        background: white;
+    }
+    &::after{
+        transition: all ease-in-out .5s;
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 0px;
+        height: 2px;
+        background: orange;
+    }
+}
+.active{
+    color : orange;
+    letter-spacing: 3px;
+    &::after{
+        width: 100%;
+    }
+}
+.jump{
+    cursor: pointer;
+    z-index: 900;
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    left: 10px;
+    bottom: 10px;
+    background: #ddd;
+    border: rgba( #2c2c2c , 0.3) solid 2px;
+    border-radius: 50%;
+    opacity: 0.6;
+    transform: translateX(-200px);
+    transition: opacity cubic-bezier(0.6, -0.28, 0.735, 0.045) .3s;
+    &:hover{
+        opacity: .9;
+    }
+}
+.scroll-indicator{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: orange;
+    height: 3px;
+    border-radius: 5px;
+    width: 0;
+}
+body{
+    // background: url('https://images.pexels.com/photos/3095439/pexels-photo-3095439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')center no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position-y: top;
+    
+}
+header{
+    width: 100%;
+    z-index: 100;
+}
+.trans{
+    transition: all ease-in-out .3s;
+}
+section{
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    scroll-snap-align: center;
+    &:nth-child(odd){
+        background: #ddd;
+    }
+    .container{
+        
+    }
+}
+
+#info{
+    
+}
+hr{
+    height: 3px;
+    border-radius: 5px;
+    width: 300px;
+}
